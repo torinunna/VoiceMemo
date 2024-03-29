@@ -14,6 +14,7 @@
 		862D8D072BB7007400747164 /* VoiceMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8D062BB7007400747164 /* VoiceMemoTests.swift */; };
 		862D8D112BB7007400747164 /* VoiceMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8D102BB7007400747164 /* VoiceMemoUITests.swift */; };
 		862D8D132BB7007400747164 /* VoiceMemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8D122BB7007400747164 /* VoiceMemoUITestsLaunchTests.swift */; };
+		862D8D252BB7099D00747164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 862D8D242BB7099D00747164 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		862D8D0C2BB7007400747164 /* VoiceMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceMemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		862D8D102BB7007400747164 /* VoiceMemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoUITests.swift; sourceTree = "<group>"; };
 		862D8D122BB7007400747164 /* VoiceMemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		862D8D242BB7099D00747164 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				862D8CF52BB7007200747164 /* VoiceMemoApp.swift */,
 				862D8CF72BB7007200747164 /* ContentView.swift */,
+				862D8D242BB7099D00747164 /* LaunchScreen.storyboard */,
 				862D8CF92BB7007300747164 /* Assets.xcassets */,
 				862D8CFB2BB7007300747164 /* Preview Content */,
 			);
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862D8D252BB7099D00747164 /* LaunchScreen.storyboard in Resources */,
 				862D8CFD2BB7007300747164 /* Preview Assets.xcassets in Resources */,
 				862D8CFA2BB7007300747164 /* Assets.xcassets in Resources */,
 			);
@@ -427,7 +431,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -457,7 +461,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
