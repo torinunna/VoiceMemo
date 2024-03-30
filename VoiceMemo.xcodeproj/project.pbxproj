@@ -15,6 +15,7 @@
 		862D8D112BB7007400747164 /* VoiceMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8D102BB7007400747164 /* VoiceMemoUITests.swift */; };
 		862D8D132BB7007400747164 /* VoiceMemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8D122BB7007400747164 /* VoiceMemoUITestsLaunchTests.swift */; };
 		862D8D252BB7099D00747164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 862D8D242BB7099D00747164 /* LaunchScreen.storyboard */; };
+		86AD1DCF2BB7DDD70069B1B7 /* Color+Extesnions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AD1DCE2BB7DDD70069B1B7 /* Color+Extesnions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		862D8D102BB7007400747164 /* VoiceMemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoUITests.swift; sourceTree = "<group>"; };
 		862D8D122BB7007400747164 /* VoiceMemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		862D8D242BB7099D00747164 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		86AD1DCE2BB7DDD70069B1B7 /* Color+Extesnions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extesnions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +98,8 @@
 		862D8CF42BB7007200747164 /* VoiceMemo */ = {
 			isa = PBXGroup;
 			children = (
-				862D8CF52BB7007200747164 /* VoiceMemoApp.swift */,
-				862D8CF72BB7007200747164 /* ContentView.swift */,
-				862D8D242BB7099D00747164 /* LaunchScreen.storyboard */,
+				86AD1DD02BB7E03A0069B1B7 /* App */,
+				86AD1DD12BB7E0510069B1B7 /* Extension */,
 				862D8CF92BB7007300747164 /* Assets.xcassets */,
 				862D8CFB2BB7007300747164 /* Preview Content */,
 			);
@@ -128,6 +129,24 @@
 				862D8D122BB7007400747164 /* VoiceMemoUITestsLaunchTests.swift */,
 			);
 			path = VoiceMemoUITests;
+			sourceTree = "<group>";
+		};
+		86AD1DD02BB7E03A0069B1B7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				862D8CF52BB7007200747164 /* VoiceMemoApp.swift */,
+				862D8CF72BB7007200747164 /* ContentView.swift */,
+				862D8D242BB7099D00747164 /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		86AD1DD12BB7E0510069B1B7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				86AD1DCE2BB7DDD70069B1B7 /* Color+Extesnions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +282,7 @@
 			files = (
 				862D8CF82BB7007200747164 /* ContentView.swift in Sources */,
 				862D8CF62BB7007200747164 /* VoiceMemoApp.swift in Sources */,
+				86AD1DCF2BB7DDD70069B1B7 /* Color+Extesnions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +442,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -452,6 +474,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
