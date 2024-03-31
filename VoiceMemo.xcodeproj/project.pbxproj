@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		862D8CF62BB7007200747164 /* VoiceMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8CF52BB7007200747164 /* VoiceMemoApp.swift */; };
-		862D8CF82BB7007200747164 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8CF72BB7007200747164 /* ContentView.swift */; };
 		862D8CFA2BB7007300747164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 862D8CF92BB7007300747164 /* Assets.xcassets */; };
 		862D8CFD2BB7007300747164 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 862D8CFC2BB7007300747164 /* Preview Assets.xcassets */; };
 		862D8D072BB7007400747164 /* VoiceMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8D062BB7007400747164 /* VoiceMemoTests.swift */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		862D8CF22BB7007200747164 /* VoiceMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		862D8CF52BB7007200747164 /* VoiceMemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoApp.swift; sourceTree = "<group>"; };
-		862D8CF72BB7007200747164 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		862D8CF92BB7007300747164 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		862D8CFC2BB7007300747164 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		862D8D022BB7007400747164 /* VoiceMemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceMemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				862D8CF52BB7007200747164 /* VoiceMemoApp.swift */,
-				862D8CF72BB7007200747164 /* ContentView.swift */,
 				862D8D242BB7099D00747164 /* LaunchScreen.storyboard */,
 			);
 			path = App;
@@ -307,7 +304,6 @@
 			files = (
 				86AD1DD62BB7E2820069B1B7 /* OnboardingViewModel.swift in Sources */,
 				86AD1DD32BB7E2190069B1B7 /* OnboardingContent.swift in Sources */,
-				862D8CF82BB7007200747164 /* ContentView.swift in Sources */,
 				86AD1DD92BB7E4890069B1B7 /* OnboardingView.swift in Sources */,
 				862D8CF62BB7007200747164 /* VoiceMemoApp.swift in Sources */,
 				86AD1DCF2BB7DDD70069B1B7 /* Color+Extesnions.swift in Sources */,
