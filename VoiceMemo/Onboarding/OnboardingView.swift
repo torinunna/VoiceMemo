@@ -8,10 +8,27 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @StateObject private var path = Path()
     @StateObject private var onboardingViewModel = OnboardingViewModel()
     
     var body: some View {
-        OnboardingContentView(onboardingViewModel: onboardingViewModel)
+        NavigationStack(path: $path.paths) {
+            OnboardingContentView(onboardingViewModel: onboardingViewModel)
+                .navigationDestination(for: PathType.self) { pathType in
+                    switch pathType {
+                    case .homeView:
+                        Text("Home")
+                            .navigationBarBackButtonHidden()
+                    case .todoView:
+                        Text("Todo")
+                            .navigationBarBackButtonHidden()
+                    case .memoView:
+                        Text("Memo")
+                            .navigationBarBackButtonHidden()
+                    }
+                }
+        }
+        .environmentObject(path)
     }
 }
 
@@ -105,9 +122,11 @@ private struct OnboardingCellView: View {
 
 // MARK: - Start Button View
 private struct StartButtonView: View {
+    @EnvironmentObject private var path: Path
+    
     fileprivate var body: some View {
         Button {
-            
+            path.paths.append(.homeView)
         } label: {
             Text("시작하기")
                 .font(.system(size: 16, weight: .medium))
