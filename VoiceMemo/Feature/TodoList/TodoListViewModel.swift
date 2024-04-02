@@ -13,7 +13,7 @@ class TodoListViewModel: ObservableObject {
     @Published var removedTodos: [Todo]
     @Published var isDisplayingAlert: Bool
     
-    var numOfremovedTodos: Int {
+    var numOfRemovedTodos: Int {
         return removedTodos.count
     }
     
@@ -56,7 +56,7 @@ extension TodoListViewModel {
         isDisplayingAlert = isDisplaying
     }
     
-    func isComplete(_ todo: Todo) {
+    func isCompleted(_ todo: Todo) {
         if let index = removedTodos.firstIndex(of: todo) {
             removedTodos.remove(at: index)
         } else {

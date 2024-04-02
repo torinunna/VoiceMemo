@@ -50,7 +50,7 @@ struct TodoView: View {
 private struct TitleView: View {
     fileprivate var body: some View {
         HStack {
-            Text("To do list를 \n추가해 보세요.")
+            Text("To do를 \n추가해 보세요.")
             Spacer()
         }
         .font(.system(size: 30, weight: .bold))

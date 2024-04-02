@@ -16,7 +16,7 @@ struct TodoListView: View {
             VStack {
                 if !todoListViewModel.todos.isEmpty {
                     CustomNavigationBar(
-                        isDisplayLeftBtn: false,
+                        isDisplayingLeftBtn: false,
                         rightBtnAction: {
                             todoListViewModel.navigationRightBtnTapeed()
                         },
@@ -43,18 +43,18 @@ struct TodoListView: View {
                 .padding(.bottom, 50)
         }
         .alert(
-            "to do list \(todoListViewModel.numOfremovedTodos)개 삭제하시겠습니까?",
+            "\(todoListViewModel.numOfRemovedTodos)개의 To do 삭제하시겠습니까?",
             isPresented: $todoListViewModel.isDisplayingAlert
           ) {
               Button(role: .destructive) {
                   todoListViewModel.isRemoved()
               } label: {
-                  Text("삭제")
+                  Text("확인")
               }
               Button(role: .cancel) {
                   
               } label: {
-                  Text("삭제")
+                  Text("취소")
               }
           }
     }
@@ -69,7 +69,7 @@ private struct TitleView: View {
             if todoListViewModel.todos.isEmpty {
                 Text("To do를\n추가해보세요!")
             } else {
-                Text("\(todoListViewModel.todos.count)개의 todo가\n있습니다.")
+                Text("\(todoListViewModel.todos.count)개의 To do가\n있습니다.")
             }
             
             Spacer()
@@ -167,7 +167,7 @@ private struct TodoCellView: View {
                 if todoListViewModel.isEditing {
                     Button {
                         isRemoved.toggle()
-                        todoListViewModel.isComplete(todo)
+                        todoListViewModel.isCompleted(todo)
                     } label: {
                         isRemoved ? Image("selectedBox") : Image("unSelectedBox")
                     }

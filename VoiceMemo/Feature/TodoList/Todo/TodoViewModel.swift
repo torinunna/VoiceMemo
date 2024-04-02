@@ -22,7 +22,7 @@ class TodoViewModel: ObservableObject {
 }
 
 extension TodoViewModel {
-    func isDisplayingCalendar(_ isDisplay: Bool) {
-        isDisplayingCalendar = isDisplay
+    func isDisplayingCalendar(_ isDisplaying: Bool) {
+        isDisplayingCalendar = isDisplaying
     }
 }
