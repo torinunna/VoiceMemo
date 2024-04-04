@@ -22,6 +22,11 @@
 		869A14A72BB9A21D00B94C1F /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A14A62BB9A21D00B94C1F /* CustomNavigationBar.swift */; };
 		869A14A92BB9A24100B94C1F /* NavigationBtnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A14A82BB9A24100B94C1F /* NavigationBtnType.swift */; };
 		869A14AD2BB9A4B800B94C1F /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A14AC2BB9A4B800B94C1F /* Todo.swift */; };
+		86AC2A522BBEB19B00256DBD /* MemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC2A512BBEB19B00256DBD /* MemoListView.swift */; };
+		86AC2A552BBEB28600256DBD /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC2A542BBEB28600256DBD /* Memo.swift */; };
+		86AC2A572BBEB2B200256DBD /* MemoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC2A562BBEB2B200256DBD /* MemoListViewModel.swift */; };
+		86AC2A592BBEB45100256DBD /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC2A582BBEB45100256DBD /* MemoView.swift */; };
+		86AC2A5C2BBEB46400256DBD /* MemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC2A5B2BBEB46400256DBD /* MemoViewModel.swift */; };
 		86AD1DCF2BB7DDD70069B1B7 /* Color+Extesnions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AD1DCE2BB7DDD70069B1B7 /* Color+Extesnions.swift */; };
 		86AD1DD32BB7E2190069B1B7 /* OnboardingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AD1DD22BB7E2190069B1B7 /* OnboardingContent.swift */; };
 		86AD1DD62BB7E2820069B1B7 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AD1DD52BB7E2820069B1B7 /* OnboardingViewModel.swift */; };
@@ -66,6 +71,11 @@
 		869A14A62BB9A21D00B94C1F /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		869A14A82BB9A24100B94C1F /* NavigationBtnType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBtnType.swift; sourceTree = "<group>"; };
 		869A14AC2BB9A4B800B94C1F /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		86AC2A512BBEB19B00256DBD /* MemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListView.swift; sourceTree = "<group>"; };
+		86AC2A542BBEB28600256DBD /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		86AC2A562BBEB2B200256DBD /* MemoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewModel.swift; sourceTree = "<group>"; };
+		86AC2A582BBEB45100256DBD /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
+		86AC2A5B2BBEB46400256DBD /* MemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewModel.swift; sourceTree = "<group>"; };
 		86AD1DCE2BB7DDD70069B1B7 /* Color+Extesnions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extesnions.swift"; sourceTree = "<group>"; };
 		86AD1DD22BB7E2190069B1B7 /* OnboardingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContent.swift; sourceTree = "<group>"; };
 		86AD1DD52BB7E2820069B1B7 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -190,6 +200,7 @@
 			children = (
 				86AD1DD72BB7E28D0069B1B7 /* Onboarding */,
 				869A14A02BB99E1200B94C1F /* TodoList */,
+				86AC2A532BBEB20C00256DBD /* MemoListView */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -219,6 +230,33 @@
 			path = Todo;
 			sourceTree = "<group>";
 		};
+		86AC2A532BBEB20C00256DBD /* MemoListView */ = {
+			isa = PBXGroup;
+			children = (
+				86AC2A5A2BBEB45500256DBD /* Memo */,
+				86AC2A512BBEB19B00256DBD /* MemoListView.swift */,
+				86AC2A562BBEB2B200256DBD /* MemoListViewModel.swift */,
+			);
+			path = MemoListView;
+			sourceTree = "<group>";
+		};
+		86AC2A5A2BBEB45500256DBD /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				86AC2A582BBEB45100256DBD /* MemoView.swift */,
+				86AC2A5B2BBEB46400256DBD /* MemoViewModel.swift */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
+		86AC2A5D2BBEB4D400256DBD /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				86AC2A542BBEB28600256DBD /* Memo.swift */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
 		86AD1DD02BB7E03A0069B1B7 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +281,7 @@
 				869A14962BB92F6500B94C1F /* Onboarding */,
 				869A14952BB92F5E00B94C1F /* Path */,
 				869A14AE2BB9A4BD00B94C1F /* Todo */,
+				86AC2A5D2BBEB4D400256DBD /* Memo */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,8 +298,8 @@
 		86D9D1992BBAF7DA001B0119 /* Todo */ = {
 			isa = PBXGroup;
 			children = (
-				86D9D1952BBAF7D1001B0119 /* TodoViewModel.swift */,
 				86D9D19A2BBAF85D001B0119 /* TodoView.swift */,
+				86D9D1952BBAF7D1001B0119 /* TodoViewModel.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -398,13 +437,18 @@
 			files = (
 				869A14A72BB9A21D00B94C1F /* CustomNavigationBar.swift in Sources */,
 				86AD1DD62BB7E2820069B1B7 /* OnboardingViewModel.swift in Sources */,
+				86AC2A522BBEB19B00256DBD /* MemoListView.swift in Sources */,
 				869A14942BB92F2800B94C1F /* Path.swift in Sources */,
 				869A149D2BB99DF300B94C1F /* TodoListView.swift in Sources */,
 				869A14A32BB9A03800B94C1F /* Date+Extensions.swift in Sources */,
+				86AC2A592BBEB45100256DBD /* MemoView.swift in Sources */,
 				86AD1DD32BB7E2190069B1B7 /* OnboardingContent.swift in Sources */,
 				869A149F2BB99E0D00B94C1F /* TodoListViewModel.swift in Sources */,
+				86AC2A572BBEB2B200256DBD /* MemoListViewModel.swift in Sources */,
 				869A14922BB92EFA00B94C1F /* PathType.swift in Sources */,
 				869A14A92BB9A24100B94C1F /* NavigationBtnType.swift in Sources */,
+				86AC2A5C2BBEB46400256DBD /* MemoViewModel.swift in Sources */,
+				86AC2A552BBEB28600256DBD /* Memo.swift in Sources */,
 				86AD1DD92BB7E4890069B1B7 /* OnboardingView.swift in Sources */,
 				862D8CF62BB7007200747164 /* VoiceMemoApp.swift in Sources */,
 				869A14AD2BB9A4B800B94C1F /* Todo.swift in Sources */,
