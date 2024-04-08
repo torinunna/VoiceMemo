@@ -9,8 +9,8 @@ import AVFoundation
 
 class VoiceMemoViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
     @Published var isDisplayingDeletingAlert: Bool
-    @Published var isDisplayingAlert: Bool
-    @Published var alertMessage: String
+    @Published var isDisplayingErrorAlert: Bool
+    @Published var errorMessage: String
     
 //    음성메모 녹음 프로퍼티
     var audioRecorder: AVAudioRecorder?
@@ -24,8 +24,8 @@ class VoiceMemoViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
     private var progressTimer: Timer?
     
 //    음성메모 파일
-    var recordFiles: [URL]
-    @Published var selectedRecordFile: URL?
+    var recordingFiles: [URL]
+    @Published var selectedRecordingFile: URL?
     
     init(isDisplayingDeletingAlert: Bool = false,
          isDisplayingAlert: Bool = false,
@@ -34,24 +34,26 @@ class VoiceMemoViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
          isPlaying: Bool = false,
          isPaused: Bool = false,
          playedTime: TimeInterval = 0,
-         recordFiles: [URL] = []
+         recordingFiles: [URL] = [],
+         selectedRecordingFile: URL? = nil
     ) {
         self.isDisplayingDeletingAlert = isDisplayingDeletingAlert
-        self.isDisplayingAlert = isDisplayingAlert
-        self.alertMessage = alertMessage
+        self.isDisplayingErrorAlert = isDisplayingAlert
+        self.errorMessage = alertMessage
         self.isRecording = isRecording
         self.isPlaying = isPlaying
         self.isPaused = isPaused
         self.playedTime = playedTime
-        self.recordFiles = recordFiles
+        self.recordingFiles = recordingFiles
+        self.selectedRecordingFile = selectedRecordingFile
     }
 }
 
 extension VoiceMemoViewModel {
-    func voiceRecordCellTapped(_ recordFile: URL) {
-        if selectedRecordFile != recordFile {
+    func voieceMemoCellTapped(_ recordingFile: URL) {
+        if selectedRecordingFile != recordingFile {
             stopPlaying()
-            selectedRecordFile = recordFile
+            selectedRecordingFile = recordingFile
         }
     }
     
@@ -59,21 +61,21 @@ extension VoiceMemoViewModel {
         setIsDisplayingDeletingAlert(true)
     }
     
-    func removeSelectedVoiceRecord() {
-        guard let fileToRemove = selectedRecordFile,
-              let indexToRemove = recordFiles.firstIndex(of: fileToRemove) else {
-            displayAlert(message: "선택된 음성메모 파일을 찾을 수 없습니다.")
+    func removeSelectedVoiceMemo() {
+        guard let fileToRemove = selectedRecordingFile,
+              let indexToRemove = recordingFiles.firstIndex(of: fileToRemove) else {
+            displayErrorAlert(message: "선택된 음성메모 파일을 찾을 수 없습니다.")
             return
         }
         
         do  {
             try FileManager.default.removeItem(at: fileToRemove)
-            recordFiles.remove(at: indexToRemove)
-            selectedRecordFile = nil
+            recordingFiles.remove(at: indexToRemove)
+            selectedRecordingFile = nil
             stopPlaying()
-            displayAlert(message: "선택된 음성메모 파일을 성공적으로 삭제했습니다.")
+            displayErrorAlert(message: "선택된 음성메모 파일을 성공적으로 삭제했습니다.")
         } catch {
-            displayAlert(message: "선택된 음성메모 삭제 중 오류가 발생했습니다.")
+            displayErrorAlert(message: "선택된 음성메모 삭제 중 오류가 발생했습니다.")
         }
     }
     
@@ -82,14 +84,14 @@ extension VoiceMemoViewModel {
     }
     
     private func setErrorAlertMessage(_ message: String) {
-        alertMessage = message
+        errorMessage = message
     }
     
     private func setIsDisplayingErrorAlert(_ isDisplaying: Bool) {
-        isDisplayingAlert = isDisplaying
+        isDisplayingErrorAlert = isDisplaying
     }
     
-    private func displayAlert(message: String) {
+    private func displayErrorAlert(message: String) {
         setErrorAlertMessage(message)
         setIsDisplayingErrorAlert(true)
     }
@@ -98,7 +100,7 @@ extension VoiceMemoViewModel {
 // MARK: - 음성메모 녹음
 extension VoiceMemoViewModel {
     func recordBtnTapped() {
-        selectedRecordFile = nil
+        selectedRecordingFile = nil
         
         if isPlaying {
             stopPlaying()
@@ -111,7 +113,7 @@ extension VoiceMemoViewModel {
     }
     
     private func startRecording() {
-        let fileURL = getDocumentsDirectory().appendingPathComponent("새로운 녹음 \(recordFiles.count + 1)")
+        let fileURL = getDocumentsDirectory().appendingPathComponent("새로운 녹음 \(recordingFiles.count + 1)")
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
@@ -124,13 +126,13 @@ extension VoiceMemoViewModel {
             audioRecorder?.record()
             self.isRecording = true
         } catch {
-            displayAlert(message: "음성메모 녹음 중 오류가 발생했습니다.")
+            displayErrorAlert(message: "음성메모 녹음 중 오류가 발생했습니다.")
         }
     }
     
     private func stopRecording() {
         audioRecorder?.stop()
-        self.recordFiles.append(self.audioRecorder!.url)
+        self.recordingFiles.append(self.audioRecorder!.url)
         self.isRecording = false
     }
     
@@ -154,7 +156,7 @@ extension VoiceMemoViewModel {
                 self.updateCurrentTime()
             }
         } catch {
-            displayAlert(message: "음성 메모 재생 중 오류가 발생했습니다.")
+            displayErrorAlert(message: "음성 메모 재생 중 오류가 발생했습니다.")
         }
     }
     
@@ -194,14 +196,14 @@ extension VoiceMemoViewModel {
             let fileAttributes = try fileManager.attributesOfItem(atPath: url.path)
             creationDate = fileAttributes[.creationDate] as? Date
         } catch {
-            displayAlert(message: "선택된 음성메모 파일 정보를 불러올 수 없습니다.")
+            displayErrorAlert(message: "선택된 음성메모 파일 정보를 불러올 수 없습니다.")
         }
         
         do {
             let audioPlayer = try AVAudioPlayer(contentsOf: url)
             duration = audioPlayer.duration
         } catch {
-            displayAlert(message: "선택된 음성메모 파일의 재생 시간을 불러올 수 없습니다.")
+            displayErrorAlert(message: "선택된 음성메모 파일의 재생 시간을 불러올 수 없습니다.")
         }
         
         return (creationDate, duration)

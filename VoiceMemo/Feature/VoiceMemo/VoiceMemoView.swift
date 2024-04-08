@@ -15,7 +15,7 @@ struct VoiceMemoView: View {
             VStack {
                 TitleView()
                 
-                if voiceMemoViewModel.recordFiles.isEmpty {
+                if voiceMemoViewModel.recordingFiles.isEmpty {
                     AnnouncementView()
                 } else {
                     VoiceMemoListView(voiceMemoViewModel: voiceMemoViewModel)
@@ -34,18 +34,19 @@ struct VoiceMemoView: View {
             isPresented: $voiceMemoViewModel.isDisplayingDeletingAlert
         ) {
             Button(role: .destructive) {
-                voiceMemoViewModel.removeSelectedVoiceRecord()
+                voiceMemoViewModel.removeSelectedVoiceMemo()
             } label: {
                 Text("삭제")
             }
+            
             Button(role: .cancel) {
                 
             } label: {
                 Text("취소")
             }
         }
-        .alert(voiceMemoViewModel.alertMessage,
-               isPresented: $voiceMemoViewModel.isDisplayingAlert) {
+        .alert(voiceMemoViewModel.errorMessage,
+               isPresented: $voiceMemoViewModel.isDisplayingErrorAlert) {
             Button(role: .cancel) {
                 
             } label: {
@@ -109,8 +110,8 @@ private struct VoiceMemoListView: View {
                     .fill(Color.customGray2)
                     .frame(height: 1)
                 
-                ForEach(voiceMemoViewModel.recordFiles, id: \.self) { recordFile in
-                    VoiceMemoCellView(voiceMemoViewModel: voiceMemoViewModel, recordFile: recordFile)
+                ForEach(voiceMemoViewModel.recordingFiles, id: \.self) { recordingFile in
+                    VoiceMemoCellView(voiceMemoViewModel: voiceMemoViewModel, recordingFile: recordingFile)
                 }
             }
         }
@@ -120,11 +121,11 @@ private struct VoiceMemoListView: View {
 // MARK: - Voice Memo Cell View
 private struct VoiceMemoCellView: View {
     @ObservedObject private var voiceMemoViewModel: VoiceMemoViewModel
-    private var recordFile: URL
+    private var recordingFile: URL
     private var creationDate: Date?
     private var duration: TimeInterval?
     private var progressBarValue: Float {
-      if voiceMemoViewModel.selectedRecordFile == recordFile
+      if voiceMemoViewModel.selectedRecordingFile == recordingFile
           && (voiceMemoViewModel.isPlaying || voiceMemoViewModel.isPaused) {
         return Float(voiceMemoViewModel.playedTime) / Float(duration ?? 1)
       } else {
@@ -132,20 +133,20 @@ private struct VoiceMemoCellView: View {
       }
     }
     
-    fileprivate init(voiceMemoViewModel: VoiceMemoViewModel, recordFile: URL) {
+    fileprivate init(voiceMemoViewModel: VoiceMemoViewModel, recordingFile: URL) {
         self.voiceMemoViewModel = voiceMemoViewModel
-        self.recordFile = recordFile
-        (self.creationDate, self.duration) = voiceMemoViewModel.getFileInfo(for: recordFile)
+        self.recordingFile = recordingFile
+        (self.creationDate, self.duration) = voiceMemoViewModel.getFileInfo(for: recordingFile)
     }
     
     fileprivate var body: some View {
         VStack {
             Button {
-                voiceMemoViewModel.voiceRecordCellTapped(recordFile)
+                voiceMemoViewModel.voieceMemoCellTapped(recordingFile)
             } label: {
                 VStack {
                     HStack {
-                        Text(recordFile.lastPathComponent)
+                        Text(recordingFile.lastPathComponent)
                             .font(.system(size: 15, weight: .bold))
                             .foregroundStyle(Color.customBlack)
                         
@@ -164,7 +165,7 @@ private struct VoiceMemoCellView: View {
                         
                         Spacer()
                         
-                        if voiceMemoViewModel.selectedRecordFile != recordFile,
+                        if voiceMemoViewModel.selectedRecordingFile != recordingFile,
                            let duration = duration {
                             Text(duration.formattedTimeInterval)
                                 .font(.system(size: 14))
@@ -175,7 +176,7 @@ private struct VoiceMemoCellView: View {
             }
             .padding(.horizontal, 20)
             
-            if voiceMemoViewModel.selectedRecordFile == recordFile {
+            if voiceMemoViewModel.selectedRecordingFile == recordingFile {
                 VStack {
                     ProgressBar(progress: progressBarValue)
                         .frame(height: 2)
@@ -207,7 +208,7 @@ private struct VoiceMemoCellView: View {
                             if voiceMemoViewModel.isPaused {
                                 voiceMemoViewModel.resumePlaying()
                             } else {
-                                voiceMemoViewModel.startPlaying(recordingURL: recordFile)
+                                voiceMemoViewModel.startPlaying(recordingURL: recordingFile)
                             }
                         } label: {
                             Image("play")
