@@ -192,14 +192,6 @@
 			path = Path;
 			sourceTree = "<group>";
 		};
-		869A14962BB92F6500B94C1F /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				86AD1DD22BB7E2190069B1B7 /* OnboardingContent.swift */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
 		869A14A02BB99E1200B94C1F /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,14 +230,6 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
-		869A14AE2BB9A4BD00B94C1F /* Todo */ = {
-			isa = PBXGroup;
-			children = (
-				869A14AC2BB9A4B800B94C1F /* Todo.swift */,
-			);
-			path = Todo;
-			sourceTree = "<group>";
-		};
 		86AC2A532BBEB20C00256DBD /* MemoList */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,14 +245,6 @@
 			children = (
 				86AC2A582BBEB45100256DBD /* MemoView.swift */,
 				86AC2A5B2BBEB46400256DBD /* MemoViewModel.swift */,
-			);
-			path = Memo;
-			sourceTree = "<group>";
-		};
-		86AC2A5D2BBEB4D400256DBD /* Memo */ = {
-			isa = PBXGroup;
-			children = (
-				86AC2A542BBEB28600256DBD /* Memo.swift */,
 			);
 			path = Memo;
 			sourceTree = "<group>";
@@ -295,10 +271,10 @@
 		86AD1DD42BB7E21D0069B1B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				869A14962BB92F6500B94C1F /* Onboarding */,
 				869A14952BB92F5E00B94C1F /* Path */,
-				869A14AE2BB9A4BD00B94C1F /* Todo */,
-				86AC2A5D2BBEB4D400256DBD /* Memo */,
+				86AC2A542BBEB28600256DBD /* Memo.swift */,
+				86AD1DD22BB7E2190069B1B7 /* OnboardingContent.swift */,
+				869A14AC2BB9A4B800B94C1F /* Todo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
