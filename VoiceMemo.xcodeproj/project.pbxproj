@@ -215,7 +215,7 @@
 			children = (
 				86AD1DD72BB7E28D0069B1B7 /* Onboarding */,
 				869A14A02BB99E1200B94C1F /* TodoList */,
-				86AC2A532BBEB20C00256DBD /* MemoListView */,
+				86AC2A532BBEB20C00256DBD /* MemoList */,
 				868947242BBFD98C002C22C6 /* VoiceMemo */,
 			);
 			path = Feature;
@@ -246,14 +246,14 @@
 			path = Todo;
 			sourceTree = "<group>";
 		};
-		86AC2A532BBEB20C00256DBD /* MemoListView */ = {
+		86AC2A532BBEB20C00256DBD /* MemoList */ = {
 			isa = PBXGroup;
 			children = (
 				86AC2A5A2BBEB45500256DBD /* Memo */,
 				86AC2A512BBEB19B00256DBD /* MemoListView.swift */,
 				86AC2A562BBEB2B200256DBD /* MemoListViewModel.swift */,
 			);
-			path = MemoListView;
+			path = MemoList;
 			sourceTree = "<group>";
 		};
 		86AC2A5A2BBEB45500256DBD /* Memo */ = {
