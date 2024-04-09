@@ -40,7 +40,7 @@ extension TimerViewModel {
     
     func pauseOrRestartBtnTapped() {
         if isPaused {
-        
+            startTimer()
         } else {
             stopTimer()
         }
