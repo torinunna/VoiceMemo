@@ -16,7 +16,7 @@ struct OnboardingView: View {
     var body: some View {
         NavigationStack(path: $path.paths) {
 //            OnboardingContentView(onboardingViewModel: onboardingViewModel)
-            VoiceMemoView()
+           TimerView()
                 .navigationDestination(for: PathType.self) { pathType in
                     switch pathType {
                     case .homeView:
