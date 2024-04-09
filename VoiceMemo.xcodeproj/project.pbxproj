@@ -25,6 +25,8 @@
 		869A14A72BB9A21D00B94C1F /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A14A62BB9A21D00B94C1F /* CustomNavigationBar.swift */; };
 		869A14A92BB9A24100B94C1F /* NavigationBtnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A14A82BB9A24100B94C1F /* NavigationBtnType.swift */; };
 		869A14AD2BB9A4B800B94C1F /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A14AC2BB9A4B800B94C1F /* Todo.swift */; };
+		869EDE112BC5808F00D0E4BF /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869EDE102BC5808F00D0E4BF /* NotificationService.swift */; };
+		869EDE142BC5822700D0E4BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869EDE132BC5822700D0E4BF /* AppDelegate.swift */; };
 		86AC2A522BBEB19B00256DBD /* MemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC2A512BBEB19B00256DBD /* MemoListView.swift */; };
 		86AC2A552BBEB28600256DBD /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC2A542BBEB28600256DBD /* Memo.swift */; };
 		86AC2A572BBEB2B200256DBD /* MemoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC2A562BBEB2B200256DBD /* MemoListViewModel.swift */; };
@@ -81,6 +83,8 @@
 		869A14A62BB9A21D00B94C1F /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		869A14A82BB9A24100B94C1F /* NavigationBtnType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBtnType.swift; sourceTree = "<group>"; };
 		869A14AC2BB9A4B800B94C1F /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		869EDE102BC5808F00D0E4BF /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		869EDE132BC5822700D0E4BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86AC2A512BBEB19B00256DBD /* MemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListView.swift; sourceTree = "<group>"; };
 		86AC2A542BBEB28600256DBD /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		86AC2A562BBEB2B200256DBD /* MemoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewModel.swift; sourceTree = "<group>"; };
@@ -149,7 +153,7 @@
 				86AD1DD02BB7E03A0069B1B7 /* App */,
 				869A14A12BB99FCC00B94C1F /* Feature */,
 				86AD1DD42BB7E21D0069B1B7 /* Model */,
-				86AD1DD12BB7E0510069B1B7 /* Extension */,
+				869EDE0F2BC5807100D0E4BF /* Core */,
 				869A14AB2BB9A48400B94C1F /* Component */,
 				862D8CF92BB7007300747164 /* Assets.xcassets */,
 				862D8CFB2BB7007300747164 /* Preview Content */,
@@ -239,6 +243,23 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
+		869EDE0F2BC5807100D0E4BF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				86AD1DD12BB7E0510069B1B7 /* Extension */,
+				869EDE122BC5809300D0E4BF /* Service */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		869EDE122BC5809300D0E4BF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				869EDE102BC5808F00D0E4BF /* NotificationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		86AC2A532BBEB20C00256DBD /* MemoList */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				862D8CF52BB7007200747164 /* VoiceMemoApp.swift */,
+				869EDE132BC5822700D0E4BF /* AppDelegate.swift */,
 				862D8D242BB7099D00747164 /* LaunchScreen.storyboard */,
 			);
 			path = App;
@@ -452,6 +474,7 @@
 				86AD1DD62BB7E2820069B1B7 /* OnboardingViewModel.swift in Sources */,
 				86AC2A522BBEB19B00256DBD /* MemoListView.swift in Sources */,
 				869A14942BB92F2800B94C1F /* Path.swift in Sources */,
+				869EDE142BC5822700D0E4BF /* AppDelegate.swift in Sources */,
 				86D36D812BC5205F002FC722 /* TimerViewModel.swift in Sources */,
 				869A149D2BB99DF300B94C1F /* TodoListView.swift in Sources */,
 				86D36D852BC52078002FC722 /* Time.swift in Sources */,
@@ -464,6 +487,7 @@
 				86AC2A572BBEB2B200256DBD /* MemoListViewModel.swift in Sources */,
 				869A14922BB92EFA00B94C1F /* PathType.swift in Sources */,
 				869A14A92BB9A24100B94C1F /* NavigationBtnType.swift in Sources */,
+				869EDE112BC5808F00D0E4BF /* NotificationService.swift in Sources */,
 				86AC2A5C2BBEB46400256DBD /* MemoViewModel.swift in Sources */,
 				86AC2A552BBEB28600256DBD /* Memo.swift in Sources */,
 				86AD1DD92BB7E4890069B1B7 /* OnboardingView.swift in Sources */,
