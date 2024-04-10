@@ -37,6 +37,9 @@
 		86AD1DD32BB7E2190069B1B7 /* OnboardingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AD1DD22BB7E2190069B1B7 /* OnboardingContent.swift */; };
 		86AD1DD62BB7E2820069B1B7 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AD1DD52BB7E2820069B1B7 /* OnboardingViewModel.swift */; };
 		86AD1DD92BB7E4890069B1B7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AD1DD82BB7E4890069B1B7 /* OnboardingView.swift */; };
+		86B91DEC2BC6D4C100AAC7CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B91DEB2BC6D4C100AAC7CF /* HomeView.swift */; };
+		86B91DEF2BC6D4DB00AAC7CF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B91DEE2BC6D4DB00AAC7CF /* HomeViewModel.swift */; };
+		86B91DF12BC6D58700AAC7CF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B91DF02BC6D58700AAC7CF /* Home.swift */; };
 		86D36D812BC5205F002FC722 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D36D802BC5205F002FC722 /* TimerViewModel.swift */; };
 		86D36D832BC52064002FC722 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D36D822BC52064002FC722 /* TimerView.swift */; };
 		86D36D852BC52078002FC722 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D36D842BC52078002FC722 /* Time.swift */; };
@@ -96,6 +99,9 @@
 		86AD1DD22BB7E2190069B1B7 /* OnboardingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContent.swift; sourceTree = "<group>"; };
 		86AD1DD52BB7E2820069B1B7 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		86AD1DD82BB7E4890069B1B7 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		86B91DEB2BC6D4C100AAC7CF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		86B91DEE2BC6D4DB00AAC7CF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		86B91DF02BC6D58700AAC7CF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		86D36D802BC5205F002FC722 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		86D36D822BC52064002FC722 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		86D36D842BC52078002FC722 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
@@ -228,11 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				86AD1DD72BB7E28D0069B1B7 /* Onboarding */,
-				869A14A02BB99E1200B94C1F /* TodoList */,
-				86AC2A532BBEB20C00256DBD /* MemoList */,
-				868947242BBFD98C002C22C6 /* VoiceMemo */,
-				86D36D862BC52092002FC722 /* Timer */,
-				865284672BC66B7700BCD3C6 /* Setting */,
+				86B91DED2BC6D4C800AAC7CF /* Home */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				869A14952BB92F5E00B94C1F /* Path */,
+				86B91DF02BC6D58700AAC7CF /* Home.swift */,
 				86AC2A542BBEB28600256DBD /* Memo.swift */,
 				86AD1DD22BB7E2190069B1B7 /* OnboardingContent.swift */,
 				869A14AC2BB9A4B800B94C1F /* Todo.swift */,
@@ -330,6 +333,20 @@
 				86AD1DD52BB7E2820069B1B7 /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		86B91DED2BC6D4C800AAC7CF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				86B91DEB2BC6D4C100AAC7CF /* HomeView.swift */,
+				86B91DEE2BC6D4DB00AAC7CF /* HomeViewModel.swift */,
+				86D36D862BC52092002FC722 /* Timer */,
+				868947242BBFD98C002C22C6 /* VoiceMemo */,
+				86AC2A532BBEB20C00256DBD /* MemoList */,
+				869A14A02BB99E1200B94C1F /* TodoList */,
+				865284672BC66B7700BCD3C6 /* Setting */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		86D36D862BC52092002FC722 /* Timer */ = {
@@ -484,6 +501,7 @@
 				869A14A72BB9A21D00B94C1F /* CustomNavigationBar.swift in Sources */,
 				86AD1DD62BB7E2820069B1B7 /* OnboardingViewModel.swift in Sources */,
 				86AC2A522BBEB19B00256DBD /* MemoListView.swift in Sources */,
+				86B91DEF2BC6D4DB00AAC7CF /* HomeViewModel.swift in Sources */,
 				869A14942BB92F2800B94C1F /* Path.swift in Sources */,
 				869EDE142BC5822700D0E4BF /* AppDelegate.swift in Sources */,
 				86D36D812BC5205F002FC722 /* TimerViewModel.swift in Sources */,
@@ -497,6 +515,7 @@
 				86D36D882BC5218D002FC722 /* Int+Extensions.swift in Sources */,
 				86AC2A572BBEB2B200256DBD /* MemoListViewModel.swift in Sources */,
 				869A14922BB92EFA00B94C1F /* PathType.swift in Sources */,
+				86B91DEC2BC6D4C100AAC7CF /* HomeView.swift in Sources */,
 				869A14A92BB9A24100B94C1F /* NavigationBtnType.swift in Sources */,
 				869EDE112BC5808F00D0E4BF /* NotificationService.swift in Sources */,
 				86AC2A5C2BBEB46400256DBD /* MemoViewModel.swift in Sources */,
@@ -504,6 +523,7 @@
 				86AD1DD92BB7E4890069B1B7 /* OnboardingView.swift in Sources */,
 				865284662BC66B6E00BCD3C6 /* SettingView.swift in Sources */,
 				862E72562BC31C0000C3C79D /* VoiceMemoViewModel.swift in Sources */,
+				86B91DF12BC6D58700AAC7CF /* Home.swift in Sources */,
 				862D8CF62BB7007200747164 /* VoiceMemoApp.swift in Sources */,
 				869A14AD2BB9A4B800B94C1F /* Todo.swift in Sources */,
 				86D9D19B2BBAF85D001B0119 /* TodoView.swift in Sources */,
