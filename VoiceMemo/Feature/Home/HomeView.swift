@@ -45,12 +45,14 @@ struct HomeView: View {
                        .tag(Tab.setting)
             }
             .environmentObject(homeViewModel)
+            
+            SeparatorView()
         }
     }
 }
 
 // MARK: - Separator View
-private struct SeperatorLineView: View {
+private struct SeparatorView: View {
   fileprivate var body: some View {
     VStack {
       Spacer()
