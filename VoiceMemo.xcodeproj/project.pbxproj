@@ -15,6 +15,7 @@
 		862D8D132BB7007400747164 /* VoiceMemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8D122BB7007400747164 /* VoiceMemoUITestsLaunchTests.swift */; };
 		862D8D252BB7099D00747164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 862D8D242BB7099D00747164 /* LaunchScreen.storyboard */; };
 		862E72562BC31C0000C3C79D /* VoiceMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862E72552BC31C0000C3C79D /* VoiceMemoViewModel.swift */; };
+		865284662BC66B6E00BCD3C6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865284652BC66B6E00BCD3C6 /* SettingView.swift */; };
 		868947232BBFD966002C22C6 /* VoiceMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868947222BBFD966002C22C6 /* VoiceMemoView.swift */; };
 		868947282BC00569002C22C6 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868947272BC00569002C22C6 /* Double+Extensions.swift */; };
 		869A14922BB92EFA00B94C1F /* PathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A14912BB92EFA00B94C1F /* PathType.swift */; };
@@ -73,6 +74,7 @@
 		862D8D122BB7007400747164 /* VoiceMemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		862D8D242BB7099D00747164 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		862E72552BC31C0000C3C79D /* VoiceMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoViewModel.swift; sourceTree = "<group>"; };
+		865284652BC66B6E00BCD3C6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		868947222BBFD966002C22C6 /* VoiceMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoView.swift; sourceTree = "<group>"; };
 		868947272BC00569002C22C6 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		869A14912BB92EFA00B94C1F /* PathType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathType.swift; sourceTree = "<group>"; };
@@ -186,6 +188,14 @@
 			path = VoiceMemoUITests;
 			sourceTree = "<group>";
 		};
+		865284672BC66B7700BCD3C6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				865284652BC66B6E00BCD3C6 /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		868947242BBFD98C002C22C6 /* VoiceMemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +232,7 @@
 				86AC2A532BBEB20C00256DBD /* MemoList */,
 				868947242BBFD98C002C22C6 /* VoiceMemo */,
 				86D36D862BC52092002FC722 /* Timer */,
+				865284672BC66B7700BCD3C6 /* Setting */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -491,6 +502,7 @@
 				86AC2A5C2BBEB46400256DBD /* MemoViewModel.swift in Sources */,
 				86AC2A552BBEB28600256DBD /* Memo.swift in Sources */,
 				86AD1DD92BB7E4890069B1B7 /* OnboardingView.swift in Sources */,
+				865284662BC66B6E00BCD3C6 /* SettingView.swift in Sources */,
 				862E72562BC31C0000C3C79D /* VoiceMemoViewModel.swift in Sources */,
 				862D8CF62BB7007200747164 /* VoiceMemoApp.swift in Sources */,
 				869A14AD2BB9A4B800B94C1F /* Todo.swift in Sources */,
