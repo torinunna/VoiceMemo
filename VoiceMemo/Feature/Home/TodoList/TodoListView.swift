@@ -10,6 +10,7 @@ import SwiftUI
 struct TodoListView: View {
     @EnvironmentObject private var path: Path
     @EnvironmentObject private var todoListViewModel: TodoListViewModel
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
         ZStack {
@@ -56,6 +57,9 @@ struct TodoListView: View {
               } label: {
                   Text("취소")
               }
+          }
+          .onChange(of: todoListViewModel.todos) { todos in
+              homeViewModel.setTodosCount(todos.count)
           }
     }
 }

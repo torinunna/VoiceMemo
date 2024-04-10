@@ -9,6 +9,7 @@ import SwiftUI
 
 struct VoiceMemoView: View {
     @StateObject private var voiceMemoViewModel = VoiceMemoViewModel()
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
         ZStack {
@@ -53,6 +54,9 @@ struct VoiceMemoView: View {
                 Text("확인")
             }
         }
+               .onChange(of: voiceMemoViewModel.recordingFiles) { recordFiles in
+                   homeViewModel.setVoiceMemosCount(recordFiles.count)
+               }
     }
 }
 

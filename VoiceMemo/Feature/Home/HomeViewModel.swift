@@ -20,3 +20,20 @@ class HomeViewModel: ObservableObject {
         self.voiceMemosCount = voiceMemosCount
     }
 }
+
+extension HomeViewModel {
+    func setTodosCount(_ count: Int) {
+        todosCount = count
+    }
+    
+    func setMemosCount(_ count: Int) {
+        memosCount = count
+    }
+    func setVoiceMemosCount(_ count: Int) {
+        voiceMemosCount = count
+    }
+    
+    func changeSelectedTab(_ tab: Tab) {
+        selectedTab = tab
+    }
+}
