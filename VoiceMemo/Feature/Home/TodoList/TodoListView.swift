@@ -13,54 +13,87 @@ struct TodoListView: View {
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
-        ZStack {
-            VStack {
-                if !todoListViewModel.todos.isEmpty {
-                    CustomNavigationBar(
-                        isDisplayingLeftBtn: false,
-                        rightBtnAction: {
-                            todoListViewModel.navigationRightBtnTapeed()
-                        },
-                        rightBtnType: todoListViewModel.navigationRightBarBtnMode
-                    )
-                } else {
-                    Spacer()
-                        .frame(height: 30)
-                }
-            
-                TitleView()
-                    .padding(.top, 20)
-                
-                if todoListViewModel.todos.isEmpty {
-                    AnnouncementView()
-                } else {
-                    TodoListContentView()
-                        .padding(.top, 20)
-                }
+        VStack {
+            if !todoListViewModel.todos.isEmpty {
+                CustomNavigationBar(
+                    isDisplayingLeftBtn: false,
+                    rightBtnAction: {
+                        todoListViewModel.navigationRightBtnTapeed()
+                    },
+                    rightBtnType: todoListViewModel.navigationRightBarBtnMode
+                )
+            } else {
+                Spacer()
+                    .frame(height: 30)
             }
             
-            AddTodoBtnView()
-                .padding(.trailing, 20)
-                .padding(.bottom, 50)
+            TitleView()
+                .padding(.top, 20)
+            
+            if todoListViewModel.todos.isEmpty {
+                AnnouncementView()
+            } else {
+                TodoListContentView()
+                    .padding(.top, 20)
+            }
         }
+        
+        // 1
+//        .modifier(AddMemoButton(action: { path.paths.append(.todoView) }))
+        
+        // 3
+        .addMemoButton {
+            path.paths.append(.todoView)
+        }
+        
+        // 2
+//        AddButtonView {
+//            VStack {
+//                if !todoListViewModel.todos.isEmpty {
+//                    CustomNavigationBar(
+//                        isDisplayingLeftBtn: false,
+//                        rightBtnAction: {
+//                            todoListViewModel.navigationRightBtnTapeed()
+//                        },
+//                        rightBtnType: todoListViewModel.navigationRightBarBtnMode
+//                    )
+//                } else {
+//                    Spacer()
+//                        .frame(height: 30)
+//                }
+//                
+//                TitleView()
+//                    .padding(.top, 20)
+//                
+//                if todoListViewModel.todos.isEmpty {
+//                    AnnouncementView()
+//                } else {
+//                    TodoListContentView()
+//                        .padding(.top, 20)
+//                }
+//            }
+//        } action: {
+//            path.paths.append(.todoView)
+//        }
+        
         .alert(
             "\(todoListViewModel.numOfRemovedTodos)개의 To do 삭제하시겠습니까?",
             isPresented: $todoListViewModel.isDisplayingAlert
-          ) {
-              Button(role: .destructive) {
-                  todoListViewModel.isRemoved()
-              } label: {
-                  Text("확인")
-              }
-              Button(role: .cancel) {
-                  
-              } label: {
-                  Text("취소")
-              }
-          }
-          .onChange(of: todoListViewModel.todos) { todos in
-              homeViewModel.setTodosCount(todos.count)
-          }
+        ) {
+            Button(role: .destructive) {
+                todoListViewModel.isRemoved()
+            } label: {
+                Text("확인")
+            }
+            Button(role: .cancel) {
+                
+            } label: {
+                Text("취소")
+            }
+        }
+        .onChange(of: todoListViewModel.todos) { todos in
+            homeViewModel.setTodosCount(todos.count)
+        }
     }
 }
 
@@ -183,27 +216,6 @@ private struct TodoCellView: View {
             Rectangle()
                 .fill(Color.customGray0)
                 .frame(height: 1)
-        }
-    }
-}
-
-// MARK: - add Todo Button
-private struct AddTodoBtnView: View {
-    @EnvironmentObject private var path: Path
-    
-    fileprivate var body: some View {
-        VStack {
-            Spacer()
-            
-            HStack {
-                Spacer()
-                
-                Button {
-                    path.paths.append(.todoView)
-                } label: {
-                    Image("writeBtn")
-                }
-            }
         }
     }
 }

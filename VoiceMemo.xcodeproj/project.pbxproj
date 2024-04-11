@@ -46,6 +46,7 @@
 		86D36D882BC5218D002FC722 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D36D872BC5218D002FC722 /* Int+Extensions.swift */; };
 		86D9D1962BBAF7D1001B0119 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9D1952BBAF7D1001B0119 /* TodoViewModel.swift */; };
 		86D9D19B2BBAF85D001B0119 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9D19A2BBAF85D001B0119 /* TodoView.swift */; };
+		86F47CE82BC8256C00FA30C2 /* AddMemoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F47CE72BC8256C00FA30C2 /* AddMemoButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		86D36D872BC5218D002FC722 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		86D9D1952BBAF7D1001B0119 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		86D9D19A2BBAF85D001B0119 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		86F47CE72BC8256C00FA30C2 /* AddMemoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				869A14AA2BB9A29400B94C1F /* NavigationBar */,
+				86F47CE62BC824EC00FA30C2 /* CustomView */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -365,6 +368,14 @@
 				86D9D1952BBAF7D1001B0119 /* TodoViewModel.swift */,
 			);
 			path = Todo;
+			sourceTree = "<group>";
+		};
+		86F47CE62BC824EC00FA30C2 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				86F47CE72BC8256C00FA30C2 /* AddMemoButton.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,6 +522,7 @@
 				86AC2A592BBEB45100256DBD /* MemoView.swift in Sources */,
 				86AD1DD32BB7E2190069B1B7 /* OnboardingContent.swift in Sources */,
 				869A149F2BB99E0D00B94C1F /* TodoListViewModel.swift in Sources */,
+				86F47CE82BC8256C00FA30C2 /* AddMemoButton.swift in Sources */,
 				86D36D832BC52064002FC722 /* TimerView.swift in Sources */,
 				86D36D882BC5218D002FC722 /* Int+Extensions.swift in Sources */,
 				86AC2A572BBEB2B200256DBD /* MemoListViewModel.swift in Sources */,
